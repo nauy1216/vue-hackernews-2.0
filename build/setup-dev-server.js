@@ -19,6 +19,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
 
   let ready
   const readyPromise = new Promise(r => { ready = r })
+  // update
   const update = () => {
     if (bundle && clientManifest) {
       ready()
@@ -31,6 +32,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
 
   // read template from disk and watch
   template = fs.readFileSync(templatePath, 'utf-8')
+  // 监听index.html文件的更改
   chokidar.watch(templatePath).on('change', () => {
     template = fs.readFileSync(templatePath, 'utf-8')
     console.log('index.html template updated.')

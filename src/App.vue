@@ -5,6 +5,9 @@
         <router-link to="/" exact>
           <img class="logo" src="~public/logo-48.png" alt="logo">
         </router-link>
+        <router-link to="/home">Home</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/top">Top</router-link>
         <router-link to="/top">Top</router-link>
         <router-link to="/new">New</router-link>
         <router-link to="/show">Show</router-link>

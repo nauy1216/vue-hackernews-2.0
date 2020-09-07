@@ -79,6 +79,7 @@ app.use('/service-worker.js', serve('./dist/service-worker.js'))
 app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl))
 
 function render (req, res) {
+  console.log('request path ==> ', req.path)
   const s = Date.now()
 
   res.setHeader("Content-Type", "text/html")
@@ -116,7 +117,7 @@ app.get('*', isProd ? render : (req, res) => {
   readyPromise.then(() => render(req, res))
 })
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8888
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`)
 })
